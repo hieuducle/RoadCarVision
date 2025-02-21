@@ -1,6 +1,6 @@
 # [PYTORCH] Counting the number and determine speed of cars, car brand classification
 <p align="center">
- <h1 align="center">PriceVision</h1>
+ <h1 align="center">RoadCarVision</h1>
 </p>
 
 ## Introduction
