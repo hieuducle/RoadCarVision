@@ -8,7 +8,6 @@ import torch
 import json
 from datasets import load_class_names, separate_class
 from models import construct_model
-# from test_ import load_weight
 import argparse
 import os
 
@@ -116,12 +115,12 @@ def main(args):
     tracker = DeepSort(max_age=30)
     cap = cv2.VideoCapture(args.video_path)
     fps = cap.get(cv2.CAP_PROP_FPS)
-    w = cap.get(cv2.CAP_PROP_FRAME_WIDTH)
-    h = cap.get(cv2.CAP_PROP_FRAME_HEIGHT)
-    delay = int(1000 / fps)
+    # w = cap.get(cv2.CAP_PROP_FRAME_WIDTH)
+    # h = cap.get(cv2.CAP_PROP_FRAME_HEIGHT)
+    # delay = int(1000 / fps)
     fourcc = cv2.VideoWriter_fourcc(*'mp4v')
     os.makedirs("output", exist_ok=True)
-    # out = cv2.VideoWriter("output/222way.mp4", fourcc, fps, (1600, 880))
+    out = cv2.VideoWriter("output/222way.mp4", fourcc, fps, (1600, 880))
     line_y = 440
     cnt_1 = 0
     cnt_2 = 0
@@ -221,11 +220,11 @@ def main(args):
 
 
         # out.write(frame)
-        cv2.imshow("Tracking", frame)
-        if cv2.waitKey(25) == ord("q"):
-            break
+        # cv2.imshow("Tracking", frame)
+        # if cv2.waitKey(25) == ord("q"):
+        #     break
     cap.release()
-    # out.release()
+    out.release()
     cv2.destroyAllWindows()
     print("Done!")
 
